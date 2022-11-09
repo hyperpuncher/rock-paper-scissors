@@ -1,3 +1,8 @@
 html {
   background-color: rgb(24, 24, 24);
 }
+
+h1 {
+  text-align: center;
+  color: aliceblue;
+}
