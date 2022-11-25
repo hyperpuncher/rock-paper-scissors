@@ -1,3 +1,9 @@
+const btns = document.querySelectorAll("button");
+const winner = document.querySelector(".winner");
+const score = document.querySelector(".score")
+let result;
+
+
 function getComputerChoice() {
   let randomNum = Math.floor(Math.random() * 3);
   let choice = 
@@ -7,11 +13,8 @@ function getComputerChoice() {
   return(choice);
 }
 
-let computerChoice;
-let playerChoice;
 
 function playRound(playerChoice, computerChoice) {
-  let result;
   if (playerChoice === computerChoice) {
     result = 'Tie!';
   } else if (playerChoice === 'rock') {
@@ -38,19 +41,28 @@ function playRound(playerChoice, computerChoice) {
   return(result);
 }
 
+
 function game() {
-  let result;
   let scorePlayer = 0;
   let scoreBot = 0;
-  while ((scorePlayer < 3) && (scoreBot < 3)) {
-    computerChoice = getComputerChoice();
-    playerChoice = prompt('Your choice?').toLowerCase();
-    result = playRound(playerChoice, computerChoice);
-    if (result.includes('Win')) scorePlayer++;
-    else if (result.includes('Lose')) scoreBot++;
-    console.log(result);
-    console.log(scorePlayer, scoreBot)
-  };
-  if (scorePlayer === 3) return(console.log("Player Wins!"));
-  else return(console.log("Bot Wins!"));
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      let playerChoice = e.explicitOriginalTarget.id;
+      result = playRound(playerChoice, getComputerChoice());
+      
+      if (result.includes('Win')) scorePlayer++;
+      else if (result.includes('Lose')) scoreBot++;
+
+      console.log(result);
+      console.log(scorePlayer, scoreBot)
+
+      if (scorePlayer === 3) return(console.log("Player Wins!"));
+      else if (scoreBot === 3) return(console.log("Bot Wins!"));
+    })
+  });
 }
+
+game();
+
+score.textContent = "Yo"

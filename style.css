@@ -1,8 +1,35 @@
 html {
   background-color: rgb(24, 24, 24);
+  font-family: 'Courier New', Courier, monospace;
+  color: whitesmoke;
 }
 
-h1 {
-  text-align: center;
-  color: aliceblue;
+* {
+  /* border: 1px solid rgb(89, 255, 0); */
+}
+
+html,
+body,
+.aligner {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+button {
+  margin: 10px;
+  padding: 20px 40px;
+  font-size: large;
+}
+
+.result {
+  padding: 50px;
+  font-size: xx-large;
 }
