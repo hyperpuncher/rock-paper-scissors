@@ -1,7 +1,6 @@
 html {
   background-color: rgb(24, 24, 24);
   font-family: 'Courier New', Courier, monospace;
-  color: whitesmoke;
 }
 
 html,
@@ -19,23 +18,26 @@ body,
   flex-direction: column;
 }
 
-button {
-  margin: 10px;
-  height: 80px;
-  width: 110px;
-  font-size: xx-large;
+button,
+.result {
+  font-size: 3.5em;
   color: whitesmoke;
+}
+
+.result {
+  padding: 50px;
+  font-weight: bold;
+  text-align: center;
+}
+
+button {
+  margin: 0px 10px;
+  height: 110px;
+  width: 150px;
   background-color: transparent;
   border-radius: 20px;
 }
 
 #restart {
   display: none;
-}
-
-.result {
-  padding: 50px;
-  font-size: xx-large;
-  font-weight: bold;
-  text-align: center;
 }
