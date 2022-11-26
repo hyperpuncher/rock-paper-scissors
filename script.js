@@ -62,8 +62,6 @@ function playRound(playerChoice, computerChoice) {
     } else {
       result = "You Win! Scissors beats Paper";
     };
-  } else {
-    return(alert("Incorrect answer"));
   }
   return(result);
 }
