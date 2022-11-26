@@ -11,12 +11,6 @@ body,
   padding: 0;
 }
 
-@media (max-width: 800px) {
-  .buttons {
-    flex-direction: column;
-  }
-}
-
 .aligner {
   display: flex;
   align-items: center;
@@ -41,13 +35,25 @@ button,
   text-align: center;
 }
 
+.score {
+  margin-top: 15px;
+}
+
 button {
-  height: 110px;
-  width: 150px;
+  padding: 20px 45px;
   background-color: transparent;
   border-radius: 20px;
 }
 
 #restart {
   display: none;
+}
+
+@media (max-width: 800px) {
+  .buttons {
+    flex-direction: column;
+  }
+  .result {
+    font-size: 2.1em;
+  }
 }
