@@ -9,7 +9,7 @@ let scoreBot = 0;
 
 btns.forEach(btn => {
   btn.addEventListener('click', (e) => {
-    const playerChoice = e.explicitOriginalTarget.id;
+    const playerChoice = e.target.id;
     result = playRound(playerChoice, getComputerChoice());
     
     if (result.includes('Win')) scorePlayer++;
