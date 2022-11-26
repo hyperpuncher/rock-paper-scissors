@@ -11,11 +11,22 @@ body,
   padding: 0;
 }
 
+@media (max-width: 800px) {
+  .buttons {
+    flex-direction: column;
+  }
+}
+
 .aligner {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
 }
 
 button,
@@ -31,7 +42,6 @@ button,
 }
 
 button {
-  margin: 0px 10px;
   height: 110px;
   width: 150px;
   background-color: transparent;
