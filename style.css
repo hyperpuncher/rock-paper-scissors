@@ -4,10 +4,6 @@ html {
   color: whitesmoke;
 }
 
-* {
-  /* border: 1px solid rgb(89, 255, 0); */
-}
-
 html,
 body,
 .aligner {
@@ -25,11 +21,21 @@ body,
 
 button {
   margin: 10px;
-  padding: 20px 40px;
-  font-size: large;
+  height: 80px;
+  width: 110px;
+  font-size: xx-large;
+  color: whitesmoke;
+  background-color: transparent;
+  border-radius: 20px;
+}
+
+#restart {
+  display: none;
 }
 
 .result {
   padding: 50px;
   font-size: xx-large;
+  font-weight: bold;
+  text-align: center;
 }
