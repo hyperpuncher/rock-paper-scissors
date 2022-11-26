@@ -4,6 +4,31 @@ const score = document.querySelector(".score");
 const buttonsContainer = document.querySelector(".buttons")
 const restartBtn = document.querySelector("#restart");
 let result;
+let scorePlayer = 0;
+let scoreBot = 0;
+
+btns.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    const playerChoice = e.explicitOriginalTarget.id;
+    result = playRound(playerChoice, getComputerChoice());
+    
+    if (result.includes('Win')) scorePlayer++;
+    else if (result.includes('Lose')) scoreBot++;
+    
+    winner.textContent = result;
+    score.textContent = `Player ${scorePlayer}:${scoreBot} Bot`
+    
+    if (scorePlayer === 3 || scoreBot === 3) {
+      btns.forEach(btn => {
+        btn.style.display = 'none';
+      })
+      restartBtn.style.display = 'inline-block';
+      
+      if (scorePlayer === 3) winner.textContent = 'Player Wins!'
+      else winner.textContent = 'Bot Wins!'
+    }
+  })
+});
 
 
 function getComputerChoice() {
@@ -42,34 +67,3 @@ function playRound(playerChoice, computerChoice) {
   }
   return(result);
 }
-
-
-function game() {
-  let scorePlayer = 0;
-  let scoreBot = 0;
-  
-  btns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      let playerChoice = e.explicitOriginalTarget.id;
-      result = playRound(playerChoice, getComputerChoice());
-      
-      if (result.includes('Win')) scorePlayer++;
-      else if (result.includes('Lose')) scoreBot++;
-
-      winner.textContent = result;
-      score.textContent = `Player ${scorePlayer}:${scoreBot} Bot`
-
-      if (scorePlayer === 3 || scoreBot === 3) {
-        btns.forEach(btn => {
-          btn.style.display = 'none';
-        })
-        restartBtn.style.display = 'inline-block';
-        
-        if (scorePlayer === 3) winner.textContent = 'Player Wins!'
-        else winner.textContent = 'Bot Wins!'
-      }
-    })
-  });
-}
-
-game();
